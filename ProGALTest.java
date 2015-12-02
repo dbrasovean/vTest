@@ -1,5 +1,6 @@
 package vTest;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,6 +11,8 @@ import ProGAL.geom3d.LineSegment;
 import ProGAL.geom3d.Point;
 import ProGAL.geom3d.Triangle;
 import ProGAL.geom3d.viewer.J3DScene;
+import ProGAL.geom3d.volumes.LSS;
+import ProGAL.geom3d.volumes.Sphere;
 import ProGAL.geom3d.volumes.Tetrahedron;
 
 class ProGALTest{
@@ -154,16 +157,17 @@ class ProGALTest{
        {
     	   scene.removeAllShapes();
     	   for(Point point: pointList.get(i)){
-    			//scene.addShape(point, java.awt.Color.RED);
+    		   scene.addShape(new Sphere(point,0.3), java.awt.Color.RED);
     	   }
     	   for(LineSegment edge: edgeList.get(i)){
-    		   //scene.addShape(edge, java.awt.Color.BLUE);
+    		   scene.addShape(new LSS(edge,0.05), java.awt.Color.BLACK);
     	   }
     	   for(Triangle facet: facetList.get(i)){
-    		    //scene.addShape(facet, java.awt.Color.GREEN,0);
+    		   	Color c = new Color(0,200,0,100);
+    		    scene.addShape(facet, c);
     	   }
     	   for(Tetrahedron cell: cellList.get(i)){
-    		    scene.addShape(cell, java.awt.Color.YELLOW,1);
+    		    //scene.addShape(cell, java.awt.Color.YELLOW);
     	   }
     	   System.out.println(i);
     	   try { Thread.sleep(500); } catch (InterruptedException e) { break; }
