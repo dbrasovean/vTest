@@ -292,7 +292,7 @@ class ProGALTest{
 	   }
 	 //----------------------edge---------------------------------------------------------------
 	 //----------------------facet---------------------------------------------------------------
-	   ArrayList<Facet> dislayFacetList = new ArrayList<Facet>();
+	  /* ArrayList<Facet> dislayFacetList = new ArrayList<Facet>();
 	   int n=0;
 	   for(int i=0;i<facetList.size();i++)
 	   {
@@ -313,7 +313,7 @@ class ProGALTest{
    		     scene.addShape(dislayFacetList.get(n).getTriangle(), c);
    		     n++;
 		   }
-	   }
+	   }*/
 	   
 	 //----------------------facet---------------------------------------------------------------
 
@@ -400,7 +400,7 @@ class ProGALTest{
     	   
     	   //----------------------edge--------------------------------------------------------------
     	  //----------------------facet---------------------------------------------------------------
-    	   ArrayList<Facet> newHiddenFacets = findNewFacets(facetHiddenList.get(i),facetHiddenList.get(i-1));
+    	   /*ArrayList<Facet> newHiddenFacets = findNewFacets(facetHiddenList.get(i),facetHiddenList.get(i-1));
     	   ArrayList<Facet> newFacets = findNewFacets(facetHiddenList.get(i-1),facetHiddenList.get(i));
 
     	   for(int j=0;j<facetList.size();j++)
@@ -472,7 +472,7 @@ class ProGALTest{
     		   dislayFacetList.get(j).setTriangle(tri);
     		   Color c = new Color(0,200,0,100);
     		   scene.addShape(dislayFacetList.get(j).getTriangle() ,c);
-    	   }
+    	   }*/
     	   
     	  //----------------------facet---------------------------------------------------------------
     	   
