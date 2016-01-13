@@ -20,7 +20,7 @@ class ProGALTest{
 
    public static void main(String[] args){
 	   
-	   int timeBetweenFrames=500;
+	   int timeBetweenFrames=50;
 	   boolean edgeOn = true;
 	   boolean facetOn = true;
 	   boolean cellOn = false;
@@ -41,6 +41,8 @@ class ProGALTest{
        int frame = -1;
        int x, y, z, v;
        
+	   J3DScene scene = J3DScene.createJ3DSceneInFrame();
+
 	   // The name of the file to open.
        String fileName = "temp.txt";
 
@@ -152,8 +154,6 @@ class ProGALTest{
     							pointList.get(frame).get(v)));
     					
     					cellList.get(frame).add(newCell);
-    					//System.out.println(strCellArray[0]+" "+strCellArray[1]+" "+strCellArray[2]+" "+strCellArray[3]);
-    					//System.out.println(newTetrahedron);
     								break;
     				default		  : break;
             	   	}
@@ -180,11 +180,6 @@ class ProGALTest{
        }
        
        //----------------end reading--------------
-	   
-       //System.out.println("LD Library Path:" + System.getProperty("java.library.path"));
-	   J3DScene scene = J3DScene.createJ3DSceneInFrame();
-	   //Display 
-	   
 
 	   for(int i=0;i< pointList.get(0).size();i++)
 	   {
