@@ -2,10 +2,13 @@ package vTest;
 
 import java.awt.Color;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.swing.JFileChooser;
 
 import ProGAL.geom3d.LineSegment;
 import ProGAL.geom3d.Point;
@@ -25,7 +28,13 @@ class ProGALTest{
 	   boolean facetOn = true;
 	   boolean cellOn = false;
 	   
-	   
+	   JFileChooser fileChooser = new JFileChooser();
+	   fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+	   int result = fileChooser.showOpenDialog(null);
+	   if (result == JFileChooser.APPROVE_OPTION) {
+	       File selectedFile = fileChooser.getSelectedFile();
+	       System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+	   }
 	   
 	   //----------------reading-------------
 	   ArrayList<ArrayList<Point>> pointList = new ArrayList<ArrayList<Point>>();
@@ -42,9 +51,9 @@ class ProGALTest{
        int x, y, z, v;
        
 	   J3DScene scene = J3DScene.createJ3DSceneInFrame();
-
+	   
 	   // The name of the file to open.
-       String fileName = "temp.txt";
+       String fileName = fileChooser.getSelectedFile().getPath();
 
        // This will reference one line at a time
        String line = null;
