@@ -126,7 +126,7 @@ class ProGALTest{
     					
     					LineSegment newLineSegment = new LineSegment(pointList.get(0).get(x),
     							pointList.get(0).get(y));
-    					Edge newEdge = new Edge(x,y,new LSS(newLineSegment,0.05));
+    					Edge newEdge = new Edge(x,y,new LSS(newLineSegment,0.01));
     					edgeList.get(frame).add(newEdge);
     					
 
@@ -192,7 +192,7 @@ class ProGALTest{
 
 	   for(int i=0;i< pointList.get(0).size();i++)
 	   {
-		   sphereList.add(new Sphere(pointList.get(0).get(i),0.3));
+		   sphereList.add(new Sphere(pointList.get(0).get(i),0.1));
 		   scene.addShape(sphereList.get(i), java.awt.Color.RED);
 	   }
 	   
